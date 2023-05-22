@@ -1,0 +1,16 @@
+def liczeine_blokow(binarny):
+    suma = 1
+    suma_ilosci = 0
+    for i in range(len(binarny)-1):
+         if binarny[i] != binarny[i +1]:
+                suma += 1
+    if suma <= 2:
+        suma_ilosci += 1
+        print(suma_ilosci, "ilosc")
+
+with open("bin.txt") as plik:
+    for linia in plik:
+        n = linia.strip()
+        i = ""
+        i += n
+        print(liczeine_blokow(i))
