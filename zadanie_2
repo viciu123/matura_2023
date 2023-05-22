@@ -1,0 +1,22 @@
+def dzies_na_binarny(liczba):
+    wynik = ""
+    while liczba >= 1:
+        if liczba % 2 == 1:
+            wynik += "1"
+        if liczba % 2 == 0:
+            wynik += "0"
+        liczba = liczba // 2
+
+    return wynik[::-1]
+
+def liczeine_blokow(binarny):
+    suma = 1
+    for i in range(len(binarny)-1):
+         if binarny[i] != binarny[i +1]:
+                suma += 1
+    return suma
+
+n = 245
+
+print(dzies_na_binarny(n))
+print(liczeine_blokow(dzies_na_binarny(n)))
