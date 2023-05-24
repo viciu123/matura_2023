@@ -1,0 +1,29 @@
+def operacja(liczba):
+    wynik = ""
+    dzies = int(liczba, 2)
+    podzielona_liczba = dzies // 2
+    po_podzielona = bin(podzielona_liczba)
+    nowa_zmienna = po_podzielona[2:]
+    while len(liczba) != len(nowa_zmienna):
+        b = "0"
+        nowa_zmienna = b + nowa_zmienna
+    for i in range(len(liczba)):
+        if liczba[i] == "1" and nowa_zmienna[i] == "1":
+            wynik += "0"
+        if liczba[i] == "1" and nowa_zmienna[i] == "0":
+            wynik += "1"
+        if liczba[i] == "0" and nowa_zmienna[i] == "1":
+            wynik += "1"
+        if liczba[i] == "0" and nowa_zmienna[i] == "0":
+            wynik += "0"
+    return wynik
+
+
+
+with open("bin.txt") as plik:
+    for linia in plik:
+        n = linia.strip()
+        i = ""
+        i += n
+        incik = i
+        print(operacja(incik))
